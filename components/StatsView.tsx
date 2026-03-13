@@ -70,32 +70,32 @@ export default function StatsView() {
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-sm text-gray-600 mb-2">This Week</p>
-          <p className="text-4xl font-bold text-blue-600">{stats.thisWeek}</p>
-          <p className="text-sm text-gray-500 mt-1">days studied</p>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
+          <p className="text-xs sm:text-sm text-gray-600 mb-2">This Week</p>
+          <p className="text-3xl sm:text-4xl font-bold text-blue-600">{stats.thisWeek}</p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">days studied</p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-sm text-gray-600 mb-2">This Month</p>
-          <p className="text-4xl font-bold text-green-600">{stats.thisMonth}</p>
-          <p className="text-sm text-gray-500 mt-1">days studied</p>
+        <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
+          <p className="text-xs sm:text-sm text-gray-600 mb-2">This Month</p>
+          <p className="text-3xl sm:text-4xl font-bold text-green-600">{stats.thisMonth}</p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">days studied</p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-sm text-gray-600 mb-2">Weekly Average</p>
-          <p className="text-4xl font-bold text-purple-600">{stats.weeklyAverage}</p>
-          <p className="text-sm text-gray-500 mt-1">days per week</p>
+        <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
+          <p className="text-xs sm:text-sm text-gray-600 mb-2">Weekly Average</p>
+          <p className="text-3xl sm:text-4xl font-bold text-purple-600">{stats.weeklyAverage}</p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">days per week</p>
         </div>
       </div>
 
       {/* Calendar view for last 30 days */}
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">
+      <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6">
+        <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
           Study Calendar (Last 30 Days)
         </h2>
-        <div className="grid grid-cols-7 gap-2">
+        <div className="grid grid-cols-7 gap-1 sm:gap-2">
           {Array.from({ length: 30 }).map((_, i) => {
             const date = new Date();
             date.setDate(date.getDate() - (29 - i));
@@ -105,7 +105,7 @@ export default function StatsView() {
             return (
               <div
                 key={i}
-                className={`aspect-square rounded-lg flex items-center justify-center text-xs ${
+                className={`aspect-square rounded-lg flex items-center justify-center text-xs sm:text-sm ${
                   studied
                     ? 'bg-green-500 text-white font-semibold'
                     : 'bg-gray-100 text-gray-400'
@@ -117,13 +117,13 @@ export default function StatsView() {
             );
           })}
         </div>
-        <div className="mt-4 flex items-center gap-4 text-sm text-gray-600">
+        <div className="mt-4 flex items-center gap-4 text-xs sm:text-sm text-gray-600">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-green-500 rounded"></div>
+            <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded"></div>
             <span>Studied</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-gray-100 rounded"></div>
+            <div className="w-3 h-3 sm:w-4 sm:h-4 bg-gray-100 rounded"></div>
             <span>Missed</span>
           </div>
         </div>

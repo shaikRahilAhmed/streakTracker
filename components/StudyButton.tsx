@@ -37,18 +37,18 @@ export default function StudyButton() {
   };
 
   return (
-    <div className="text-center">
+    <div className="text-center mb-6">
       <button
         onClick={handleStudy}
         disabled={loading}
-        className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors shadow-md"
+        className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-400 disabled:to-gray-400 text-white font-semibold py-4 px-8 rounded-xl text-base sm:text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
       >
-        {loading ? 'Marking...' : 'I Studied Today ✓'}
+        {loading ? '⏳ Marking...' : '✓ I Studied Today'}
       </button>
 
       {message && (
         <div
-          className={`mt-4 p-4 rounded-lg ${
+          className={`mt-4 p-4 rounded-lg text-sm sm:text-base ${
             message.includes('already')
               ? 'bg-yellow-50 text-yellow-800 border border-yellow-200'
               : message.includes('successfully')

@@ -13,12 +13,12 @@ export default async function Home() {
   }
 
   return (
-    <main className="container mx-auto px-4 py-8 max-w-2xl">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">
+    <main className="container mx-auto px-4 py-6 sm:py-8 max-w-4xl">
+      <div className="text-center mb-6 sm:mb-8">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
           Daily Learning Streak Tracker
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-sm sm:text-base">
           Welcome back, {session.user.name}! 👋
         </p>
       </div>
@@ -26,19 +26,18 @@ export default async function Home() {
       <StreakCard />
       <StudyButton />
 
-      <div className="mt-6 text-center space-x-4">
+      <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
         <Link
           href="/history"
-          className="text-blue-600 hover:text-blue-800 underline"
+          className="w-full sm:w-auto text-center bg-white hover:bg-gray-50 text-blue-600 font-semibold px-6 py-3 rounded-lg border-2 border-blue-600 transition-colors"
         >
-          View Study History
+          📅 View Study History
         </Link>
-        <span className="text-gray-400">•</span>
         <Link
           href="/stats"
-          className="text-blue-600 hover:text-blue-800 underline"
+          className="w-full sm:w-auto text-center bg-white hover:bg-gray-50 text-purple-600 font-semibold px-6 py-3 rounded-lg border-2 border-purple-600 transition-colors"
         >
-          View Statistics
+          📊 View Statistics
         </Link>
       </div>
     </main>

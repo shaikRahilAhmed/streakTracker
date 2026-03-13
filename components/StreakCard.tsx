@@ -45,42 +45,49 @@ export default function StreakCard() {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+    <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-6">
+      <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
         Welcome Back! 👋
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-blue-50 rounded-lg p-4">
-          <p className="text-sm text-gray-600 mb-1">Current Streak 🔥</p>
-          <p className="text-3xl font-bold text-blue-600">
-            {data.currentStreak} {data.currentStreak === 1 ? 'day' : 'days'}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-3 sm:p-4">
+          <p className="text-xs sm:text-sm text-gray-600 mb-1">Current Streak 🔥</p>
+          <p className="text-2xl sm:text-3xl font-bold text-blue-600">
+            {data.currentStreak}
+          </p>
+          <p className="text-xs text-gray-500 mt-1">
+            {data.currentStreak === 1 ? 'day' : 'days'}
           </p>
         </div>
 
-        <div className="bg-green-50 rounded-lg p-4">
-          <p className="text-sm text-gray-600 mb-1">Total Study Days 📖</p>
-          <p className="text-3xl font-bold text-green-600">{data.totalDays}</p>
+        <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-3 sm:p-4">
+          <p className="text-xs sm:text-sm text-gray-600 mb-1">Total Days 📖</p>
+          <p className="text-2xl sm:text-3xl font-bold text-green-600">{data.totalDays}</p>
+          <p className="text-xs text-gray-500 mt-1">studied</p>
         </div>
 
-        <div className="bg-purple-50 rounded-lg p-4">
-          <p className="text-sm text-gray-600 mb-1">Best Streak 🏆</p>
-          <p className="text-3xl font-bold text-purple-600">
-            {data.bestStreak} {data.bestStreak === 1 ? 'day' : 'days'}
+        <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-3 sm:p-4">
+          <p className="text-xs sm:text-sm text-gray-600 mb-1">Best Streak 🏆</p>
+          <p className="text-2xl sm:text-3xl font-bold text-purple-600">
+            {data.bestStreak}
+          </p>
+          <p className="text-xs text-gray-500 mt-1">
+            {data.bestStreak === 1 ? 'day' : 'days'}
           </p>
         </div>
 
-        <div className="bg-orange-50 rounded-lg p-4">
-          <p className="text-sm text-gray-600 mb-1">Last Studied 📅</p>
-          <p className="text-lg font-semibold text-orange-600">
+        <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-3 sm:p-4">
+          <p className="text-xs sm:text-sm text-gray-600 mb-1">Last Studied 📅</p>
+          <p className="text-sm sm:text-lg font-semibold text-orange-600 break-words">
             {data.lastStudyDate ? formatDate(data.lastStudyDate) : 'Never'}
           </p>
         </div>
       </div>
 
       {data.currentStreak > 0 && (
-        <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
-          <p className="text-center text-gray-700 font-medium">
+        <div className="mt-4 p-3 sm:p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
+          <p className="text-center text-sm sm:text-base text-gray-700 font-medium">
             {getMotivationalMessage(data.currentStreak)}
           </p>
         </div>
